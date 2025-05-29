@@ -64,20 +64,17 @@ CREATE TABLE pages (
 git clone https://github.com/yourusername/pages-management-system.git
 cd pages-management-system
 3. Start the Backend Server
-bash
-Copy
-Edit
+
+===============================================================================
 cd backend
 npm install
 npm start
 Runs at: http://localhost:5000
 ======================================================================================
 ⚠️ Configure your MySQL credentials in backend/config/db.js.
-
+===================================================================================
 3. Start the Frontend App
-bash
-Copy
-Edit
+
 cd ../frontend
 npm install
 npm start
