@@ -1,4 +1,4 @@
-# 🧑‍💼 Payplex Task - Pages Management System
+# 🧑‍💼 Payplex Assignment test- Pages Management System
 
 A **full-stack web application** that enables an **Admin** to create and manage dynamic website pages, and allows **Users** to view those pages based on routing and page status.
 
@@ -39,7 +39,24 @@ A **full-stack web application** that enables an **Admin** to create and manage 
 
 ---
 
-## 🗄️ Database Setup
+### Create the database "page_manger_db" in MySQL:## 🗄️ Database Setup
+
+### Create the `user` table in MySQL:
+
+CREATE TABLE users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  email VARCHAR(255) NOT NULL UNIQUE,
+  password VARCHAR(255) NOT NULL,
+  role ENUM('admin', 'user') DEFAULT 'user',
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+INSERT INTO users (email, password, role)
+VALUES 
+  ('admin@gmail.com', 'admin123', 'admin'),
+  ('user@gmail.com', 'user123', 'user');
+
 
 ### Create the `pages` table in MySQL:
 ```sql
@@ -76,7 +93,7 @@ cd pages-management-system
 
 cd backend
 npm install
-npm start
+node server.js
 Runs on: http://localhost:5000
 
 ⚠️ Configure MySQL credentials in backend/config/db.js
